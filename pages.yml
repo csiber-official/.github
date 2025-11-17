@@ -1,0 +1,5 @@
+# .github/pages.yml
+pages:
+  enabled: true
+  branch: main
+  path: /
