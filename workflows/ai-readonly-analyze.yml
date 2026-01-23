@@ -1,0 +1,24 @@
+name: AI Readonly Repo Analysis
+
+on:
+  workflow_dispatch:
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read   # 🔒 READ ONLY
+
+    steps:
+      - name: Checkout .github repo
+        uses: actions/checkout@v4
+
+      - name: List target repositories (manual for now)
+        run: |
+          echo "linux-handbook" >> repos.txt
+          echo "csiber-official.github.io" >> repos.txt
+
+      - name: Initialize AI cache (dry)
+        run: |
+          mkdir -p .ai/cache
+          echo "AI cache ready"
