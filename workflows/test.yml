@@ -1,11 +1,14 @@
-name: AI Visibility Test
+name: AI Bootstrap Visibility
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
-  test:
+  bootstrap:
     runs-on: ubuntu-latest
     steps:
-      - name: Confirm workflow visibility
-        run: echo "Workflow is now visible"
+      - name: Bootstrap run
+        run: echo "Bootstrap run completed"
